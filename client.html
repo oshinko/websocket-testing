@@ -1,0 +1,12 @@
+<script>
+// var ws = new WebSocket("ws://localhost:8000/", ["test", "chat"]);
+// var ws = new WebSocket("ws://localhost:8000/", "test");
+var ws = new WebSocket("ws://localhost:8000/");
+ws.onopen = function() {
+    console.log(ws);
+    ws.send("test");
+    ws.onmessage = function(message) {
+        console.log(message.data);
+    };
+}
+</script>
